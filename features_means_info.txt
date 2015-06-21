@@ -1,0 +1,165 @@
+Feature Selection
+=================
+
+The features selected for this data set are means (averages) of certain data from the "Human Activity Recognition Using Smartphones Data Set", which we will refer to as "HAR" in this document.
+
+Specifically, this data set contains means of the mean and standard deviation features from the original HAR dataset - those features in the HAR data that have "mean()" and "std()" in their name. These means are calculated for all of these mean and std features, grouped by activity (walking, sitting, etc.) and subject id (an integer between 1 and 30 inclusive).
+
+Note that features in HAR having "meanFreq()" in their name are intentionally excluded, since the mean of the weighted average of frequency components is not meaningful.
+
+The data set is "tidy" because
+1. Each variable (the means of the mean and standard deviation values from the HAR data) is in one column
+2. Each different observation of a variable is in a different row; the rows correspond to the mean of the variable for a particular activity and subject id. Since there are 6 activities and 30 subjects, we have 6 x 30 = 180 rows in the data set.
+3. There is a single table because we have one "kind" of variable - the means.
+
+Features
+========
+Note: for all features beginning with "MeanOf" below, you should append "grouped by activity and subject id" at the end of each description. So, you'd read the description for the 3rd feature, MeanOfTBodyAccMeanX, as "mean of the tBodyAcc-mean()-X data, grouped by activity and subject id."
+
+activityName - walking, sitting, etc. (from the HAR activity_labels.txt file)
+subject - the subject ID, 1-30 inclusive
+MeanOfTBodyAccMeanX - mean of the tBodyAcc-mean()-X data
+MeanOfTBodyAccMeanY - mean of the tBodyAcc-mean()-Y data
+MeanOfTBodyAccMeanZ - mean of the tBodyAcc-mean()-Z data
+MeanOfTBodyAccStdX - mean of the tBodyAcc-std()-X data
+MeanOfTBodyAccStdY - mean of the tBodyAcc-std()-Y data
+MeanOfTBodyAccStdZ - mean of the tBodyAcc-std()-Z data
+MeanOfTGravityAccMeanX - mean of the tGravityAcc-mean()-X data
+MeanOfTGravityAccMeanY - mean of the tGravityAcc-mean()-Y data
+MeanOfTGravityAccMeanZ - mean of the tGravityAcc-mean()-Z data
+MeanOfTGravityAccStdX - mean of the tGravityAcc-std()-X data
+MeanOfTGravityAccStdY - mean of the tGravityAcc-std()-Y data
+MeanOfTGravityAccStdZ - mean of the tGravityAcc-std()-Z data
+MeanOfTBodyAccJerkMeanX - mean of the tBodyAccJerk-mean()-X data
+MeanOfTBodyAccJerkMeanY - mean of the tBodyAccJerk-mean()-Y data
+MeanOfTBodyAccJerkMeanZ - mean of the tBodyAccJerk-mean()-Z data
+MeanOfTBodyAccJerkStdX - mean of the tBodyAccJerk-std()-X data
+MeanOfTBodyAccJerkStdY - mean of the tBodyAccJerk-std()-Y data
+MeanOfTBodyAccJerkStdZ - mean of the tBodyAccJerk-std()-Z data
+MeanOfTBodyGyroMeanX - mean of the tBodyGyro-mean()-X data
+MeanOfTBodyGyroMeanY - mean of the tBodyGyro-mean()-Y data
+MeanOfTBodyGyroMeanZ - mean of the tBodyGyro-mean()-Z data
+MeanOfTBodyGyroStdX - mean of the tBodyGyro-std()-X data
+MeanOfTBodyGyroStdY - mean of the tBodyGyro-std()-Y data
+MeanOfTBodyGyroStdZ - mean of the tBodyGyro-std()-Z data
+MeanOfTBodyGyroJerkMeanX - mean of the tBodyGyroJerk-mean()-X data
+MeanOfTBodyGyroJerkMeanY - mean of the tBodyGyroJerk-mean()-Y data
+MeanOfTBodyGyroJerkMeanZ - mean of the tBodyGyroJerk-mean()-Z data
+MeanOfTBodyGyroJerkStdX - mean of the tBodyGyroJerk-std()-X data
+MeanOfTBodyGyroJerkStdY - mean of the tBodyGyroJerk-std()-Y data
+MeanOfTBodyGyroJerkStdZ - mean of the tBodyGyroJerk-std()-Z data
+MeanOfTBodyAccMagMean - mean of the tBodyAccMag-mean() data
+MeanOfTBodyAccMagStd - mean of the tBodyAccMag-std() data
+MeanOfTGravityAccMagMean - mean of the tGravityAccMag-mean() data
+MeanOfTGravityAccMagStd - mean of the tGravityAccMag-std() data
+MeanOfTBodyAccJerkMagMean - mean of the tBodyAccJerkMag-mean() data
+MeanOfTBodyAccJerkMagStd - mean of the tBodyAccJerkMag-std() data
+MeanOfTBodyGyroMagMean - mean of the tBodyGyroMag-mean() data
+MeanOfTBodyGyroMagStd - mean of the tBodyGyroMag-std() data
+MeanOfTBodyGyroJerkMagMean - mean of the tBodyGyroJerkMag-mean() data
+MeanOfTBodyGyroJerkMagStd - mean of the tBodyGyroJerkMag-std() data
+MeanOfFBodyAccMeanX - mean of the fBodyAcc-mean()-X data
+MeanOfFBodyAccMeanY - mean of the fBodyAcc-mean()-Y data
+MeanOfFBodyAccMeanZ - mean of the fBodyAcc-mean()-Z data
+MeanOfFBodyAccStdX - mean of the fBodyAcc-std()-X data
+MeanOfFBodyAccStdY - mean of the fBodyAcc-std()-Y data
+MeanOfFBodyAccStdZ - mean of the fBodyAcc-std()-Z data
+MeanOfFBodyAccJerkMeanX - mean of the fBodyAccJerk-mean()-X data
+MeanOfFBodyAccJerkMeanY - mean of the fBodyAccJerk-mean()-Y data
+MeanOfFBodyAccJerkMeanZ - mean of the fBodyAccJerk-mean()-Z data
+MeanOfFBodyAccJerkStdX - mean of the fBodyAccJerk-std()-X data
+MeanOfFBodyAccJerkStdY - mean of the fBodyAccJerk-std()-Y data
+MeanOfFBodyAccJerkStdZ - mean of the fBodyAccJerk-std()-Z data
+MeanOfFBodyGyroMeanX - mean of the fBodyGyro-mean()-X data
+MeanOfFBodyGyroMeanY - mean of the fBodyGyro-mean()-Y data
+MeanOfFBodyGyroMeanZ - mean of the fBodyGyro-mean()-Z data
+MeanOfFBodyGyroStdX - mean of the fBodyGyro-std()-X data
+MeanOfFBodyGyroStdY - mean of the fBodyGyro-std()-Y data
+MeanOfFBodyGyroStdZ - mean of the fBodyGyro-std()-Z data
+MeanOfFBodyAccMagMean - mean of the fBodyAccMag-mean() data
+MeanOfFBodyAccMagStd - mean of the fBodyAccMag-std() data
+MeanOfFBodyAccJerkMagMean - mean of the fBodyBodyAccJerkMag-mean() data
+MeanOfFBodyAccJerkMagStd - mean of the fBodyBodyAccJerkMag-std() data
+MeanOfFBodyGyroMagMean - mean of the fBodyBodyGyroMag-mean() data
+MeanOfFBodyGyroMagStd - mean of the fBodyBodyGyroMag-std() data
+MeanOfFBodyGyroJerkMagMean - mean of the fBodyBodyGyroJerkMag-mean() data
+MeanOfFBodyGyroJerkMagStd - mean of the fBodyBodyGyroJerkMag-std() data
+
+Reproducing the Data
+====================
+
+To reproduce these results, run the run_analysis.R script (which is in the same directory as the file you are currently reading). The header of this script documents prerequisites, which consist only of the HAR dataset must be in the same directory as the script.xx`x	x	
+
+More Information About Original Dataset
+=======================================
+
+See https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
+
+Also, for ease of reference, the original codebook from the HAR dataset appears immediately below.
+
+
+*******************************************************************************
+*
+* ORIGINAL codebook from the UCI HAR Dataset appears below this point
+*
+*******************************************************************************
+
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+The complete list of variables of each feature vector is available in 'features.txt'
